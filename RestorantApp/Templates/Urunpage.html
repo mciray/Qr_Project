@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block site-title %}
+welcome page
+{% endblock site-title %}
+
+{% block site-content %}
+
+
+<div class="container text-white">
+
+    <h1 class="text-center">Welcome {{ request.user }}</h1>
+    <h3 class="text-center mt-5">Kategoriler</h3>
+   
+    <div class="row justify-content-center">
+        
+
+   {% for kategori in kategoriler %}
+   
+
+
+    <a href="{% url 'kategori' kategori.id %}"><button >{{kategori.kategori}} </button></a>
+    
+
+
+   {% endfor %}
+            
+
+        </div>
+       
+      
+    </div>
+ 
+
+ 
+</div>
+
+
+{% endblock site-content %}

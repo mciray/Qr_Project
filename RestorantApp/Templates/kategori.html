@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block site-title %}
+kategori
+{% endblock site-title %}
+{% block site-content %}
+<div class="container text-white fw-bolder">
+
+  
+      
+       
+     
+<div class="row mt-5 text-white">
+<a href="{% url 'urunler' %}"><button>X</button></a>
+    {% for urun in  kategorigit %}
+  
+<div class="urunler col-md-4">
+    <div class="card h-100 text-center" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{urun.name}}</h5>
+            <p class="card-text">{{urun.description}}</p>
+          
+          </div>
+        <img src="{{urun.image.url}}" class="card-img-top" alt="...">
+       
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock site-content %}
+
+

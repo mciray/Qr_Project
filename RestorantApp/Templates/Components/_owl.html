@@ -1,0 +1,40 @@
+<div class="owl-carousel ">
+    {% for urun in urun %}
+    <div class="product-item bg-light mb-4 " style="min-height: 300px;">
+        <div class="product-img position-relative overflow-hidden" >
+            <img class="img-fluid "  src={{urun.image.url}} alt="Urun Bulunamadı">
+            <div class="product-action">
+                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true, // Sonsuz döngü etkin
+            margin: 50,  // Öğeler arası boşluk
+            autoplayHoverPause: true,// Fare ile üzerine gelindiğinde otomatik oynatmayı durdur
+            autoplay: true,
+            smartSpeed: 1250, // Otomatik oynatmayı etkinleştir
+            autoplayTimeout: 2000, // Otomatik oynatma süresi (1 saniye)
+            responsive: {
+                0: {
+                    margin: 0,
+                    items: 1 // Ekran genişliği 0px - 767px arasında 1 öğe göster
+                },
+                768: {
+                    items: 3 // Ekran genişliği 768px ve üzerinde 3 öğe göster
+                }
+            }
+        });
+    });
+</script>

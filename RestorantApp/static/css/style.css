@@ -1,0 +1,9 @@
+body{
+    background: url(../images/bg.jpg);
+}
+.urunler{
+    background:inherit;
+}
+.card{
+    background-color:inherit;
+}
